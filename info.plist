@@ -8,6 +8,21 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>3F13A42B-AA21-4A66-B310-9AF403B00782</key>
+		<array/>
+		<key>7200800E-7678-452A-9B20-899758469076</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3F13A42B-AA21-4A66-B310-9AF403B00782</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>ECE27643-BD0C-494B-A73A-29A02E6248E6</key>
 		<array>
 			<dict>
@@ -42,30 +57,9 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Git Brancher</string>
+	<string>Git Branches</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>keyword</key>
-				<string>gb</string>
-				<key>subtext</key>
-				<string>Show available git branches</string>
-				<key>text</key>
-				<string>Git Brancher</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>ECE27643-BD0C-494B-A73A-29A02E6248E6</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -128,8 +122,6 @@
 				<integer>0</integer>
 				<key>escaping</key>
 				<integer>102</integer>
-				<key>keyword</key>
-				<string>.gb</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -162,6 +154,95 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>gb</string>
+				<key>subtext</key>
+				<string>Show available git branches</string>
+				<key>text</key>
+				<string>Git Branches</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>ECE27643-BD0C-494B-A73A-29A02E6248E6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>gbookmark</string>
+				<key>subtext</key>
+				<string>/path/to/repo bookmarkName</string>
+				<key>text</key>
+				<string>Bookmark a repository</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>7200800E-7678-452A-9B20-899758469076</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>python gitBranchFetch.py --bookmark "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Show available git branches</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>3F13A42B-AA21-4A66-B310-9AF403B00782</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -170,25 +251,43 @@
 		<key>3DA4D528-0F38-4416-B558-98413F6CBA3B</key>
 		<dict>
 			<key>xpos</key>
-			<integer>435</integer>
+			<integer>445</integer>
 			<key>ypos</key>
-			<integer>225</integer>
+			<integer>25</integer>
+		</dict>
+		<key>3F13A42B-AA21-4A66-B310-9AF403B00782</key>
+		<dict>
+			<key>xpos</key>
+			<integer>240</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
+		<key>7200800E-7678-452A-9B20-899758469076</key>
+		<dict>
+			<key>xpos</key>
+			<integer>30</integer>
+			<key>ypos</key>
+			<integer>180</integer>
 		</dict>
 		<key>ECE27643-BD0C-494B-A73A-29A02E6248E6</key>
 		<dict>
 			<key>xpos</key>
-			<integer>15</integer>
+			<integer>25</integer>
 			<key>ypos</key>
-			<integer>225</integer>
+			<integer>25</integer>
 		</dict>
 		<key>FEB071EA-C4FB-40AC-8E8F-8CD242FEF498</key>
 		<dict>
 			<key>xpos</key>
-			<integer>225</integer>
+			<integer>235</integer>
 			<key>ypos</key>
-			<integer>225</integer>
+			<integer>25</integer>
 		</dict>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string></string>
 	<key>webaddress</key>
 	<string></string>
 </dict>

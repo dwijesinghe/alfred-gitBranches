@@ -1,26 +1,46 @@
 import sys
+import argparse
 import os
 import subprocess
 
 from workflow import Workflow, ICON_WEB, web
+from workflow.notify import notify
 from os.path import expanduser
 
 def main(wf):
 
-	#fetch argument from Alfred
-	if len(wf.args) > 0:
-		query = wf.args[0]
-	else:
-		query = "Foobar" 
+	# parse the python script's arguments
+	parser = argparse.ArgumentParser()
+	parser.add_argument('--bookmark', dest='bookmark', nargs='?', default=None)
+	parser.add_argument('query', nargs='?', default=None)
+	args = parser.parse_args(wf.args)
+	
+	if args.bookmark:
+		#Format /path/to/repo bookmarkName
+		params = args.bookmark.split(" ")
+		bookmarkName = params[-1]
+		path = "".join(params[:-1])
+		wf.settings[bookmarkName] = path
+		notify('Git Branches Bookmark Saved','Bookmarked {} as {}'.format(path, bookmarkName))
+		return 0
+	
+	query = args.query	
 
-	params = (wf.args[0].split(" "))
+	params = (query.split(" "))
 	repoPath = params[0]
+
+	# Can supply a bookmark name instead of a path
+	# (Bookmark must already be saved in settings)
+	if wf.settings[repoPath]:
+		repoPath = wf.settings[repoPath]
+
 	filterStr = ''
 	if len(params) > 1:
 		filterStr = params[1]
 		if repoPath[0] != '/':
 			repoPath = '{}/{}'.format(expanduser('~'), repoPath)
 
+		branchProcess = subprocess.check_output(["git", "stash"], cwd=repoPath)
 		branchProcess = subprocess.check_output(["git", "fetch"], cwd=repoPath)
 		branchProcess = subprocess.check_output(["git", "branch"], cwd=repoPath)
 		branchProcess = branchProcess.decode("utf-8")
