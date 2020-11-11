@@ -1,4 +1,7 @@
 # alfred-gitBranches
+
+Easy git branch switching workflow for Alfred
+
 ## Usage
 #### To switch to a different branch:
 
@@ -21,5 +24,3 @@ Example:
 `gb bookmarkName searchString`
 
 Icons made by [Freepik](https://www.flaticon.com/authors/freepik) from [Flaticon](https://www.flaticon.com)
-
-#code
