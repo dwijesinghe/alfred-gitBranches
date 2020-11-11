@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>gitBranchDW</string>
+	<string>gitBranchesDW</string>
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
@@ -287,8 +287,8 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string></string>
+	<string>1.0.0</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/dwijesinghe/alfred-gitBranches</string>
 </dict>
 </plist>
