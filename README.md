@@ -1,5 +1,5 @@
 # alfred-gitBranches
-Easily switch to different git branches using Alfred
+Easy git branch switching workflow for Alfred
 
 ![screencapture demo](GitBranchesDemo.gif)
 
@@ -25,5 +25,8 @@ Example:
 `gb bookmarkName searchString`
 
 Icons made by [Freepik](https://www.flaticon.com/authors/freepik) from [Flaticon](https://www.flaticon.com)
+<<<<<<< HEAD
 
 #code
+=======
+>>>>>>> eae648624425d07da0d60a59b0a8c82f030ea8e4
