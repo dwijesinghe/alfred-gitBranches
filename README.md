@@ -1,4 +1,8 @@
 # alfred-gitBranches
+Easily switch to different git branches using Alfred
+
+![screencapture demo](GitBranchesDemo.gif)
+
 ## Usage
 #### To switch to a different branch:
 
