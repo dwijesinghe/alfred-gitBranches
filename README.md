@@ -25,8 +25,3 @@ Example:
 `gb bookmarkName searchString`
 
 Icons made by [Freepik](https://www.flaticon.com/authors/freepik) from [Flaticon](https://www.flaticon.com)
-<<<<<<< HEAD
-
-#code
-=======
->>>>>>> eae648624425d07da0d60a59b0a8c82f030ea8e4
