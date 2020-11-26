@@ -42,7 +42,7 @@ def main(wf):
 
 		branchProcess = subprocess.check_output(["git", "stash"], cwd=repoPath)
 		branchProcess = subprocess.check_output(["git", "fetch"], cwd=repoPath)
-		branchProcess = subprocess.check_output(["git", "branch"], cwd=repoPath)
+		branchProcess = subprocess.check_output(["git", "branch", "-a"], cwd=repoPath)
 		branchProcess = branchProcess.decode("utf-8")
 		branches = branchProcess.split('\n')
 		for branch in branches:
