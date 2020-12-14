@@ -40,7 +40,6 @@ def main(wf):
 		if repoPath[0] != '/':
 			repoPath = '{}/{}'.format(expanduser('~'), repoPath)
 
-		branchProcess = subprocess.check_output(["git", "stash"], cwd=repoPath)
 		branchProcess = subprocess.check_output(["git", "fetch"], cwd=repoPath)
 		branchProcess = subprocess.check_output(["git", "branch", "-a"], cwd=repoPath)
 		branchProcess = branchProcess.decode("utf-8")

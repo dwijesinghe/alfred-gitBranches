@@ -13,6 +13,7 @@ def main(wf):
 		branchName = branchData[0]
 		repoPath = branchData[1]
 
+		branchProcess = subprocess.check_output(["git", "stash"], cwd=repoPath)
 		branchProcess = subprocess.check_output(["git", "checkout", branchName], cwd=repoPath)
 		notify('Git Branch Checked Out',"Checked out branch {}".format(branchName))
 		wf.send_feedback()
