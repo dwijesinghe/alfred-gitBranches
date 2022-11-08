@@ -10,7 +10,7 @@ Easy git branch switching workflow for Alfred
 2. Enter the path to your local repository  (or a repository bookmark - see below) followed by a search string
 Example:
 `gb /path/to/repo searchString`
-	1. gitBranches will stash your local changes on your current branch (you can easily get them back with `git stash pop`
+	1. gitBranches stashes your local changes on your current branch (you can easily get them back with `git stash pop`)
 	2. gitBranches will fetch any new remote branch names and list all available branches for your repository. As you type your search string this will filter down to only branch names which match your search string (case insensitive)
 	3. When you select a branch, git will checkout the selected branch in your repo. No terminal, or GUI required :) 
 
